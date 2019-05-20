@@ -13,9 +13,13 @@ public class PlayerWalk : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetButton("Fire1"))
-        {
-            transform.position = transform.position + Camera.main.transform.forward * playerSpeed * Time.deltaTime;
-        }
+		float cameraFacing = Camera.main.transform.eulerAngles.x;
+
+		Debug.Log("ANGULO: " + cameraFacing);              
+
+		if ( (cameraFacing > 10) && (cameraFacing < 150) )
+		{
+			transform.position = transform.position + Camera.main.transform.forward * playerSpeed * Time.deltaTime;
+		}
 	}
 }
