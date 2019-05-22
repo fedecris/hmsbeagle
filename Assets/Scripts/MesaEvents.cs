@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MesaEvents : MonoBehaviour {
 
+	public TextMesh mesaText;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -15,8 +17,18 @@ public class MesaEvents : MonoBehaviour {
 	}
     
     public void showMessage()	{
+		// muestro el texto
+		mesaText.GetComponentInChildren<Renderer>().enabled = true;
 		//codigo para mostrar mensaje en pantalla;
-        Debug.Log("PRESIONO SOBRE LA MESA");
+
+		Debug.Log("SHOW <TEXTO MESA>");
 	}
-	
+
+	public void unshowMessage()	{
+		// muestro el texto
+		mesaText.GetComponentInChildren<Renderer>().enabled = false;
+
+		Debug.Log("UNSHOW <TEXTO MESA>");
+	}
+
 }

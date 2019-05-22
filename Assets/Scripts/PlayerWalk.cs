@@ -15,7 +15,7 @@ public class PlayerWalk : MonoBehaviour {
 	void Update () {
 		float cameraFacing = Camera.main.transform.eulerAngles.x;
 
-		Debug.Log("ANGULO: " + cameraFacing);              
+		//Debug.Log("ANGULO: " + cameraFacing);              
 
 		if ( (cameraFacing > 10) && (cameraFacing < 150) )
 		{
