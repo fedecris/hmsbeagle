@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerWalk : MonoBehaviour {
 
-    public int playerSpeed; //5
+	public float playerSpeed; //5
 
 	// Use this for initialization
 	void Start () {
