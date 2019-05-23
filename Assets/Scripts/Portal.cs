@@ -14,7 +14,7 @@ public class Portal : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Vector3.Distance (character.transform.position, transform.position) < 0.4f) {
+		if (Vector3.Distance (character.transform.position, transform.position) < 0.5f) {
 			string newCurrent = null;
 			if (SceneManager.GetActiveScene().name == "Exterior") {
 				newCurrent = "Interior";
