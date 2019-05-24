@@ -6,6 +6,7 @@ public class PlayerWalk : MonoBehaviour {
 
 	public float playerSpeed; //5
 
+	protected float radius = 0.01f;
 	// Use this for initialization
 	void Start () {
 		
@@ -19,7 +20,11 @@ public class PlayerWalk : MonoBehaviour {
 
 		if ( (cameraFacing > 10) && (cameraFacing < 150) )
 		{
-			transform.position = transform.position + Camera.main.transform.forward * playerSpeed * Time.deltaTime;
+			Vector3 validPos = transform.position + Camera.main.transform.forward * playerSpeed / 2f;
+			//Debug.Log ("currPos" + transform.position);
+			//Debug.Log ("newPos" + newPos);
+			if (!Physics.CheckSphere (validPos, radius))
+				transform.position = transform.position + Camera.main.transform.forward * playerSpeed * Time.deltaTime;
 		}
 	}
 }
